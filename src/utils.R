@@ -9,4 +9,9 @@ save_map <- function(map, map_title){
   htmlwidgets::saveWidget(map, 
                           file=map_file(map_name),
                           title=map_title)
+  message(glue::glue("Map: {map_title} saved successfully"))
+}
+
+source_here <- function(file_path){
+  source(here::here(file_path), local=FALSE, echo=TRUE, )
 }

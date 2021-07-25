@@ -1,15 +1,5 @@
-# dependencies
-library(leaflet)  
-library(tidyverse)
-library(here)
-options("rgdal_show_exportToProj4_warnings"="none")
-library(rgdal)
-library(rgeos)
-library(geosphere)
-library(sf)
-library(googlesheets4)
-source(here::here("src", "utils.R"))
 # ingest MLA data - kept on google sheet for convenient updating
+googlesheets4::gs4_deauth()
 ss <- "15o0X79WuNDE9Un7r1ttPE7VeZTimmZMZ8mkKAtdBT_o"
 wa_labor_factions <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/15o0X79WuNDE9Un7r1ttPE7VeZTimmZMZ8mkKAtdBT_o/edit?usp=sharing", sheet="data")
 # ingest electorates
